@@ -6,7 +6,8 @@ const error404 = (req, res) => {
   res.status(404).json({ msg: "error, not found" });
 };
 
-const error500 = (req, res) => {
+// eslint-disable-next-line no-unused-vars
+const error500 = (error, req, res, next) => {
   debug("server error");
   res.status(500).json({ msg: "server error" });
 };
