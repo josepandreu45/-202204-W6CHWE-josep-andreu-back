@@ -7,7 +7,7 @@ const conectDB = require("./db/index");
 (async () => {
   try {
     await conectDB(process.env.DATABASE);
-    await initializeServer(process.env.PORT || 4000);
+    await initializeServer(process.env.PORT || 3000);
   } catch (error) {
     debug("Error ocurred");
   }
