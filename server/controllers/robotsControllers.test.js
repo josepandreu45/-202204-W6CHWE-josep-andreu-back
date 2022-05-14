@@ -21,11 +21,8 @@ describe("Given the getRobots function", () => {
     });
   });
   test("Then it should call the response method json with a list of robots", async () => {
-    const expectedResult = {
-      robots: mockRobots,
-    };
     await getRobots(null, res);
 
-    expect(res.json).toHaveBeenCalledWith(expectedResult);
+    expect(res.json).toHaveBeenCalledWith(mockRobots);
   });
 });
