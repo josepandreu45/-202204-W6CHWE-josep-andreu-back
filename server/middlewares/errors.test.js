@@ -34,7 +34,7 @@ describe("Given the error500 function", () => {
     test("Then it should call the response methot status with 500", () => {
       const expectedResult = 500;
 
-      error500(null, res);
+      error500(null, null, res);
 
       expect(res.status).toHaveBeenCalledWith(expectedResult);
     });
@@ -42,7 +42,7 @@ describe("Given the error500 function", () => {
   test("Then it should call the response method json with msg: server error", () => {
     const expectedResult = { msg: "server error" };
 
-    error500(null, res);
+    error500(null, null, res);
 
     expect(res.json).toHaveBeenCalledWith(expectedResult);
   });
