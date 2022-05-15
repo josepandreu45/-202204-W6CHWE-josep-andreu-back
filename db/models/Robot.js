@@ -3,7 +3,7 @@ const { model, Schema } = require("mongoose");
 const RobotSchema = new Schema({
   image: { type: String },
   name: { type: String },
-  create: { type: Date },
+  date: { type: String },
   resistance: { type: Number },
   velocity: { type: Number },
 });
