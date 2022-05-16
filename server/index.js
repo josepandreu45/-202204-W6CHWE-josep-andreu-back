@@ -2,8 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
-const helmet = require("helmet");
+
 const robotsRouters = require("./routers/robotsRouters");
+const auth = require("./middlewares/auth");
+
+
 
 const { error404, error500 } = require("./middlewares/errors");
 
@@ -14,7 +17,7 @@ app.use(morgan("dev"));
 app.use(helmet());
 app.use(express.json());
 
-app.use("/robots", robotsRouters);
+app.use("/robots", auth, robotsRouters);
 
 app.use(error404);
 app.use(error500);
