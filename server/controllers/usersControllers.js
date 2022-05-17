@@ -4,8 +4,8 @@ const User = require("../../db/models/User");
 
 const loginUser = async (req, res, next) => {
   const { username, password } = req.body;
-  const user = await User.findOne({ username, password });
-  if (!User) {
+  const user = await User.findOne({ username });
+  if (!user) {
     res.status(401).json({ msg: "usuario o contraseña incorrectos" });
   } else {
     const userData = {
