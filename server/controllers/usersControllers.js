@@ -9,7 +9,7 @@ const loginUser = async (req, res, next) => {
     res.status(401).json({ msg: "usuario o contraseña incorrectos" });
   } else {
     const userData = {
-      name: user.name,
+      id: user.id,
       username: user.username,
     };
     const rightPassword = await bcrypt.compare(password, user.password);
